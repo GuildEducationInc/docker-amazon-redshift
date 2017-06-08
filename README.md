@@ -11,13 +11,13 @@ There are two variants: one based on Debian Jessie and another based on Alpine 3
 
 Port 5439 is set via an `EXPOSE` command so it should be available to linked containers. Optionally, you can map it to the host:
 
-`docker run -d -p 5439:5439 --name my-redshift guild/amazon-redshift`
+`docker run -d -p 5439:5439 --name my-redshift guildeducation/docker-amazon-redshift`
 
 ### Persisting Data
 
 In order to have data persist between container runs, map the `PGDATA` directory to a volume. This variable is defaulted to `/var/lib/postgresql/data`:
 
-`docker run -d -p 5439:5439 -v /path/on/host:/var/lib/postgresql/data --name my-redshift guild/amazon-redshift`
+`docker run -d -p 5439:5439 -v /path/on/host:/var/lib/postgresql/data --name my-redshift gguildeducation/docker-amazon-redshift`
 
 `initdb` is run on the `PGDATA` directory automatically on container start
 
@@ -25,7 +25,7 @@ In order to have data persist between container runs, map the `PGDATA` directory
 
 It is recommended to set a password for the default postgres user:
 
-`docker run -d -p 5439:5439 -v /path/on/host:/var/lib/postgresql/data -e POSTGRES_PASSWORD=your_password --name my-redshift guild/amazon-redshift`
+`docker run -d -p 5439:5439 -v /path/on/host:/var/lib/postgresql/data -e POSTGRES_PASSWORD=your_password --name my-redshift guildeducation/docker-amazon-redshift`
 
 ## Environment Variables
 
