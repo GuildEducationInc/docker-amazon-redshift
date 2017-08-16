@@ -7,7 +7,7 @@ There are two variants: one based on Debian Jessie and another based on Alpine 3
 ## How to use the image
 
 ### Running
-`docker run -d --name my-redshift guild/amazon-redshift`
+`docker run -d --name my-redshift guildeducation/docker-amazon-redshift`
 
 Port 5439 is set via an `EXPOSE` command so it should be available to linked containers. Optionally, you can map it to the host:
 
@@ -17,7 +17,7 @@ Port 5439 is set via an `EXPOSE` command so it should be available to linked con
 
 In order to have data persist between container runs, map the `PGDATA` directory to a volume. This variable is defaulted to `/var/lib/postgresql/data`:
 
-`docker run -d -p 5439:5439 -v /path/on/host:/var/lib/postgresql/data --name my-redshift gguildeducation/docker-amazon-redshift`
+`docker run -d -p 5439:5439 -v /path/on/host:/var/lib/postgresql/data --name my-redshift guildeducation/docker-amazon-redshift`
 
 `initdb` is run on the `PGDATA` directory automatically on container start
 
