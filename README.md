@@ -1,3 +1,7 @@
+> [!IMPORTANT]
+>
+> This project is deprecated and is read-only for historical context only.
+
 # Docker Amazon Redshift
 
 This is an unofficial implementation of Amazon Redshift inside a Docker container. At this time, the container is merely PostgreSQL 8.0.2 running  on port 5439 inside the container. No other changes have been made to make it more closely match the behavior of Redshift.
